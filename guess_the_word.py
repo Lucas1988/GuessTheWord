@@ -1,5 +1,4 @@
 import streamlit as st
-import sys
 from pathlib import Path
 from typing import Any
 from openai import OpenAI
@@ -13,8 +12,8 @@ from openai import OpenAI
 # logger = logging.getLogger(__name__)
 
 # Initialize OpenAI client
+OPENAI_API_KEY: str = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key=OPENAI_API_KEY)
-
 
 def load_custom_css() -> None:
     """
